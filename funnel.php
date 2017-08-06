@@ -11,17 +11,44 @@
 # 
 
 ## CONFIG
-$feeds=array(
-	'http://www.warriordudimanche.net/feed/rss',
-	'http://www.warriordudimanche.net/feed/rss/commentaires',
-	'http://www.warriordudimanche.net/shaarli/index.php?do=rss',
-	'http://warriordudimanche.net/tooeet.php?command=rss',
-	);
+
+if ($_GET['source']=='youtube'){
+	$feeds=array('https://www.youtube.com/feeds/videos.xml?channel_id=UCkpwPf2B4FphjqVcozDym0A',
+	
+	);}
+else if ($_GET['source']=='medias')
+{
+	$feeds=array(
+'http://www.zataz.com/feed/',
+'http://www.01net.com/rss/actualites/securite/',
+'http://www.01net.com/rss/actualites/technos/',
+'http://www.01net.com/rss/actualites/buzz-societe/',
+'http://www.ginjfo.com/actualites/feed',
+
+	);}
+	else {
+			$feeds=array(
+'https://dyrk.org/feed/',
+'http://feeds.feedburner.com/Dadarevue',
+'http://blog.idleman.fr/feed/',
+'https://blog.seboss666.info/feed/',
+'https://feeds.feedburner.com/semageek',
+'https://www.blog-de-michel.fr/author/michelgard/feed/',
+'http://homputersecurity.com/feed/',
+'http://manmade2.com/feed/',
+'https://medium.com/feed/jekt-space/tagged/raspberry-pi',
+'https://blog.garamotte.net/feeds/all.rss.xml',
+'https://www.comptoirsecu.fr/feed/all.xml',
+'http://warriordudimanche.net/feed/rss',
+'https://korben.info/feed',
+'https://www.leblogduhacker.fr/feed/',
+
+	);}
 
 date_default_timezone_set ('Europe/Paris');
-define('FUNNEL_FEED_NAME','Warriordudimanche: le flux complet');
-define('FUNNEL_FEED_DESCRIPTION','Tout ce qui est posté par Bronco sur WDD');
-define('WEBSITE_REFERENCE_URL','http://warriordudimanche.net');
+define('FUNNEL_FEED_NAME','Guillaume RSS');
+define('FUNNEL_FEED_DESCRIPTION','flux RSS agrégé par funnel');
+define('WEBSITE_REFERENCE_URL','http://perdu.com');
 define('FUNNEL_FEED_URL','http://'.$_SERVER['SERVER_NAME'].$_SERVER['PHP_SELF']);
 define('ALLOW_GET',false);
 ## TEMPLATES
